@@ -7,6 +7,7 @@
 <c:if test="${!empty param.editid and param.id }">
 	<c:redirect url="jason78.jsp"/>
 </c:if>
+
 <sql:setDataSource driver="com.mysql.jdbc.Driver" 
 	url="jdbc:mysql://127.0.0.1:3306/brad"
 	user="root" password="root"  />
@@ -36,7 +37,7 @@ select * from member where id = ?
 </head>
 <body>
 
-<form>
+<form action="UpdateData">
 	<input type="hidden" name="id" value="${result.rows[0].id}">
   Account:<input type="text" name= "account" value="${result.rows[0].account }"/><br>
   Password:<input type="password" name= "passwd" value="${result.rows[0].passwd }"/><br>
